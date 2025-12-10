@@ -13,7 +13,10 @@ class PersonalInformationController extends Controller
     public function store(PersonalInformationStore $request)
     {
         $validated = $request->validated();
-
+        if ($request->hasFile('profile_picture')) {
+            $path = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $validated['profile_picture'] = $path;
+         }
         PersonalInformation::updateOrCreate(
             ['user_id' => Auth::id()],
             $validated

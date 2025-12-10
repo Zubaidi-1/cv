@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Skill::class);
     }
+    // ! have ONE objective
+    public function objective(): HasOne
+    {
+        return $this->hasOne(Objective::class);
+    }
 }

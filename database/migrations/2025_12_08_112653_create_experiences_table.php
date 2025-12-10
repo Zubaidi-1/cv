@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
+            $table->string('location');
             $table->string('company');
             $table->date('start_date');
             $table->date('end_date')->nullable();

@@ -19,7 +19,7 @@ class SkillController extends Controller
             'proficiency_level' => $validated['proficiency_level'] ?? null,
             'user_id' => $request->user()->id,
         ]);
-        return redirect()->back()->with('success', 'Skill added successfully.');
+        return back()->with('success', 'Skill added successfully.');
     }
 
     public function destroy(SkillDeleteRequest $skillDeleteRequest, Skill $skill)

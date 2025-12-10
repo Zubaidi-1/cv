@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ObjectiveController;
 use App\Http\Controllers\PersonalInformationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
@@ -31,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/experiences/{experience}', [ExperienceController::class, 'destroy'])->name('experiences.destroy');
     Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
     Route::delete('/skills/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
+    Route::post('/objectives', [ObjectiveController::class, 'store'])->name('objective.store');
+    Route::post('/education', [EducationController::class, 'store'])->name('education.store');
+
 });
 
 require __DIR__ . '/auth.php';

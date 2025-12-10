@@ -10,7 +10,7 @@ class Education extends Model
 {
     /** @use HasFactory<\Database\Factories\EducationFactory> */
     use HasFactory;
-    protected $fillable = ['degree', 'institution', 'graduation_year', 'field_of_study', 'gpa'];
+    protected $fillable = ['degree', 'institution', 'graduation_year', 'field_of_study', 'gpa', "user_id"];
 
     // ! belong to user
     public function user(): BelongsTo

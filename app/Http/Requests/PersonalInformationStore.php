@@ -11,7 +11,7 @@ class PersonalInformationStore extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class PersonalInformationStore extends FormRequest
             "city" => ["nullable", "string", "max:85"],
             "address" => ["nullable", "string", "max:255"],
             "date_of_birth" => ["nullable", "date"],
-            "profile_picture" => ["nullable", "string", "max:255"],
+            "profile_picture" => ["nullable", "image", "max:2048"],
         ];
     }
 }

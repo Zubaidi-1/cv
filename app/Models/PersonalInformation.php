@@ -10,7 +10,7 @@ class PersonalInformation extends Model
 {
     /** @use HasFactory<\Database\Factories\PersonalInformationFactory> */
     use HasFactory;
-    protected $fillable = ["first_name", "last_name", "profile_picture", "email", "phone_number", "country", "city", "address", "date_of_birth"];
+    protected $fillable = ["first_name", "last_name", "profile_picture", "email", "phone_number", "country", "city", "address", "date_of_birth", "user_id"];
     public function user(): BelongsTo
     {
 

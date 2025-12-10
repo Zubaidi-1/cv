@@ -19,7 +19,7 @@ class EducationController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Education information saved successfully.');
+        return redirect()->back()->with('success', 'Education information saved successfully.');
     }
 
     public function destroy(EducationDeleteStore $request, Education $education)
