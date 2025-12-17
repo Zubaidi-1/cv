@@ -40,9 +40,9 @@ export default function DeleteUserForm({ className = "" }) {
     const deletePersonalData = (e) => {
         e.preventDefault();
 
-        destroy(route("personal-information.destroy"), {
+        destroy(route("delete"), {
             preserveScroll: true,
-            onSuccess: () => closeModal(),
+            onSuccess: (response) => console.log(response),
             onError: () => passwordInput.current.focus(),
             onFinish: () => reset(),
         });

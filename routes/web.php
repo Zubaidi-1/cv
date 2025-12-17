@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ObjectiveController;
 use App\Http\Controllers\PersonalInformationController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/skills/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
     Route::post('/objectives', [ObjectiveController::class, 'store'])->name('objective.store');
     Route::post('/education', [EducationController::class, 'store'])->name('education.store');
+    Route::get('/layouts', [LayoutController::class, 'index'])->name('layouts.index');
+    Route::get('/layouts/{layout}', [LayoutController::class, 'show'])->name('layouts.show');
+    Route::delete("/delete-personal", [ProfileController::class, "deletePersonalData"])->name("delete");
 
 });
 

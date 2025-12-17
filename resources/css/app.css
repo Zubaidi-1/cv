@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@media print {
+    body {
+        background: white;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}

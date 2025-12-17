@@ -5,6 +5,7 @@ import Objective from "./CV/partials/Objective";
 import Education from "./CV/partials/Education";
 import Skill from "./CV/partials/Skill";
 import Experinece from "./CV/partials/Experience";
+import Layouts from "./CV/partials/Layouts";
 
 export default function Dashboard() {
     return (
@@ -15,6 +16,7 @@ export default function Dashboard() {
             <Education />
             <Experinece />
             <Skill />
+            <Layouts />
         </AuthenticatedLayout>
     );
 }

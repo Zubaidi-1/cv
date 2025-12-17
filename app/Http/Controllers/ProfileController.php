@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\PersonalInformation;
+use App\Models\Skill;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -59,5 +63,15 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function deletePersonalData(){
+             $userID = Auth::id();
+        // Delete data
+          PersonalInformation::where('user_id', $userID)->delete();
+          Education::where('user_id', $userID)->delete();
+          Experience::where('user_id', $userID)->delete();
+          Skill::where('user_id', $userID)->delete();
+          return back()->with("success", "Deleted");
     }
 }
